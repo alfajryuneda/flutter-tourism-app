@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
+var myTextStyle = TextStyle(fontFamily: 'Oxygen');
+
 class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
@@ -17,7 +18,8 @@ class DetailScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
+                    // fontWeight: FontWeight.bold,
+                    fontFamily: 'Staatliches',
                   ),
                 )),
             Container(
@@ -26,30 +28,39 @@ class DetailScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Column(
-                    children: const [
-                      Icon(Icons.calendar_today),
-                      SizedBox(
+                    children: [
+                      const Icon(Icons.access_time),
+                      const SizedBox(
                         height: 8.0,
                       ),
-                      Text('Open Everyday')
+                      Text(
+                        'Open Everyday',
+                        style: myTextStyle,
+                      )
                     ],
                   ),
                   Column(
-                    children: const [
-                      Icon(Icons.watch),
-                      SizedBox(
+                    children: [
+                      const Icon(Icons.watch),
+                      const SizedBox(
                         height: 8.0,
                       ),
-                      Text('09.00 - 20.00')
+                      Text(
+                        '09.00 - 20.00',
+                        style: myTextStyle,
+                      )
                     ],
                   ),
                   Column(
-                    children: const [
-                      Icon(Icons.money),
-                      SizedBox(
+                    children: [
+                      const Icon(Icons.money),
+                      const SizedBox(
                         height: 8.0,
                       ),
-                      Text('Rp. 25.000')
+                      Text(
+                        'Rp. 25.000',
+                        style: myTextStyle,
+                      )
                     ],
                   ),
                 ],
@@ -93,7 +104,9 @@ class DetailScreen extends StatelessWidget {
             )
           ],
         ),
-      )),
+      ),
     );
   }
 }
+
+// safearea for excluding topbar on mobile
